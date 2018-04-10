@@ -1,11 +1,17 @@
-Feature: Login Action
+Feature: Login Action 
 
-Scenario: Successful Login with Valid Credentials
+Background: User is on Login Page
 	Given User is on Home Page
 	When User Navigate to LogIn Page
-	And User enters UserName and Password
-	Then Message displayed Login Successfully
- 
-Scenario: Successful LogOut
-	When User LogOut from the Application
+
+Scenario: Successful Login with Valid Credentials 
+	And User enters UserName and Password 
+	Then Message displayed Login Successfully 
+	
+Scenario: User enters wrong credentials
+	And User enters wrong credentials
+	Then Error message is displayed
+	
+Scenario: Successful LogOut 
+	And User LogOut from the Application 
 	Then Message displayed LogOut Successfully
