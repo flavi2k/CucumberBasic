@@ -9,26 +9,18 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class TestSteps {
-	public WebDriver driver;
 	
-	public TestSteps(){
-	 driver = Hooks.driver;
-	}
+	public WebDriver driver = Hooks.driver;
+	
 	
 	@Given("^User is on Home Page$")
 	public void user_is_on_Home_Page() {
-		
-
 		driver.get("https://demo.totaralms.com/");
-		
-		
-		
 	}
 
 	@When("^User Navigate to LogIn Page$")
 	public void user_Navigate_to_LogIn_Page() {
 		driver.findElement(By.cssSelector(".usermenu .link-as-button.btn.btn-primary.btn-xs.btn-small")).click();
-		
 	}
 
 	@When("^User enters UserName and Password$")
