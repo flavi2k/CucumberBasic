@@ -6,6 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import stepDefinition.Hooks;
+import waiter.Waiter;
+
 public class LoginPage {
 
 	@FindBy(id="username")
@@ -20,11 +23,16 @@ public class LoginPage {
 	@FindBy(css=".error")
 	private  WebElement errorMessage;
 	
+	WebDriver driver = Hooks.driver;
+	private Waiter waiter = new Waiter();
+	
 	public LoginPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
+	
 	public  void loginPositive(){
+		waiter.waitForPageLoadComplete(driver);
 		usernameInput.sendKeys("trainer");
 		passwordInput.sendKeys("trainer");
 		loginBtn.click();

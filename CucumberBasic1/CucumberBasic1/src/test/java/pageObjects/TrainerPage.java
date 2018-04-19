@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class TrainerPage {
 
+	
 	@FindBy(css="#action-menu-toggle-0 .usertext")
 	private WebElement userText;
 	
